@@ -1,0 +1,25 @@
+[package]
+name = "mt-logic"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Gear Technologies"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+gstd = { git = "https://github.com/gear-tech/gear.git", branch = "testnet" }
+mt-logic-io = { path = "io" }
+mt-storage-io = { path = "../mt-storage/io" }
+primitive-types = { version = "0.12.1", default-features = false, features = ["scale-info"] }
+hex = { version = "0.4.3", default-features = false, features = ["alloc"] }
+hashbrown = "0.13.2"
+
+[dev-dependencies]
+gstd = { git = "https://github.com/gear-tech/gear.git", branch = "testnet", features = ["debug"] }
+gtest = { git = "https://github.com/gear-tech/gear.git", branch = "testnet" }
+tokio = { version = "1.26.0", features = ["full"] }
+
+[build-dependencies]
+mt-logic-io = { path = "io" }
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", branch = "testnet" }
